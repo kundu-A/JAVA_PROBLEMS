@@ -1,5 +1,9 @@
 class Add
 {
+	Add
+	{
+		System.out.println("ADD");
+	}
 	public static void main(String args[])
 	{
 		int a=5,b=6,c=0;
