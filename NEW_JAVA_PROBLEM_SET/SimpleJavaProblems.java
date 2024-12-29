@@ -125,6 +125,74 @@ class Solution{
         }
         System.out.println(input);
     }
+    public static void arithmeticOperation(){
+        System.out.println("PERFORMING BASIC ARITHEMETIC OPERATION!!!");
+        System.out.println("Please enter two number: ");
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        int result=0,cont=0;
+        do {
+            System.out.println("Press '1' if you want to perform addition operation: ");
+            System.out.println("Press '2' if you want to perform subtraction operation: ");
+            System.out.println("Press '3' if you want to perform multiplication operation: ");
+            System.out.println("Press '4' if you want to perform division operation: ");
+            int ch=sc.nextInt();
+            switch (ch) {
+                case 1: result=num1+num2;
+                        System.out.println(num1+" + "+num2+" = "+result);
+                break;
+                case 2: result=num1-num2;
+                        System.out.println(num1+" - "+num2+" = "+result);
+                break;
+                case 3: result=num1*num2;
+                        System.out.println(num1+" * "+num2+" = "+result);
+                break;
+                case 4: if(num1==0 || num2==0)
+                            System.out.println("Please enter valid non-zero number");
+                        else{
+                            result=num1/num2;
+                            System.out.println(num1+" / "+num2+" = "+result);
+                        }
+                break;
+                default: System.out.println("Please enter valid option!!");
+                    break;
+            }
+            System.out.println("If you want to continue those operation then press '1' otherwise '0': ");
+            cont=sc.nextInt();
+        } while (cont==1);
+    }
+    public static void binaryEquivalent(){
+        System.out.println("PERFORMING TO CALCULATE BINARY EQUIVALENT OF A NUMBER!!!");
+        System.out.println("Please enter a number: ");
+        int input=sc.nextInt();
+        int store=input;
+        String result="";
+        while (input>0) {
+            int temp=input%2;
+            result=result+temp;
+            input=input/2;
+        }
+        StringBuffer resultView=new StringBuffer(result);
+        System.out.println("Binary Equivalent of "+store+" is "+resultView.reverse());
+    }
+    public static void multiplicationTable(){
+        System.out.println("PERFORMING MULTIPLICATION TABLE");
+        System.out.println("Please enter a number to create Multiplication Table: ");
+        int input=sc.nextInt();
+        for(int i=1;i<=10;i++)
+            System.out.println(input+" x "+i+" = "+(input*i));
+    }
+    public static void checking(){
+        System.out.println("PERFORMING TO CHECK A LETTER ID VOWEL OR CONSONENT!!!");
+        System.out.println("Please enter any letter to check is it vowel or consonent: ");
+        String input=sc.next();
+        input=input.toLowerCase();
+        String vowel="aeiou";
+        if(vowel.indexOf(input)!=-1)
+            System.out.println(input+" is vowel.");
+        else
+            System.out.println(input+" is consonent.");
+    }
 }
 public class SimpleJavaProblems {
     public static void main(String[] args) {
@@ -138,5 +206,9 @@ public class SimpleJavaProblems {
         Solution.sumOfDigitOfNumber();
         Solution.extractDigits();
         Solution.incrementBy1();
+        Solution.arithmeticOperation();
+        Solution.binaryEquivalent();
+        Solution.multiplicationTable();
+        Solution.checking();
     }
 }
