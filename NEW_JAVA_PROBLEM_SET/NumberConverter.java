@@ -101,24 +101,33 @@ class Converter{
         String binary=Integer.toOctalString(num);
         System.out.println(input+" = "+binary);
     }
+    /*---------------------- FAHRENHEIT TO CELSIUS ------------------------ */ 
+    public static void fahrenheitToCelsius(){
+        System.out.println("Please enter degree's in fahrenheit: ");
+        double f=sc.nextDouble();
+        double c=((f-32)*5)/9;
+        System.out.println("In Fahrenheit "+f+" = "+c+" in Celsius.");
+    }
 }
 public class NumberConverter {
     public static void main(String[] args) {
-         /*---------------------- BINARY CONVERTER ------------------------ */
+        /*---------------------- BINARY CONVERTER ------------------------ */
         Converter.binaryToDecimal();
         Converter.binaryToHexaDecimal();
         Converter.binaryToOctal();
-         /*---------------------- OCTAL CONVERTER ------------------------ */
+        /*---------------------- OCTAL CONVERTER ------------------------ */
         Converter.octalToBinary();
         Converter.octalToDecimal();
         Converter.octalToHexaDecimal();
-         /*---------------------- DECIMAL CONVERTER ------------------------ */
+        /*---------------------- DECIMAL CONVERTER ------------------------ */
         Converter.decimalToBinary();
         Converter.decimalToHexaDecimal();
         Converter.decimalToOctal();
-         /*---------------------- HEXADECIMAL CONVERTER ------------------------ */
+        /*---------------------- HEXADECIMAL CONVERTER ------------------------ */
         Converter.hexaDecimalToBinary();
         Converter.hexaDecimalToDecimal();
         Converter.hexaDecimalToOctal();
+        /*---------------------- FAHRENHEIT TO CELSIUS ------------------------ */
+        Converter.fahrenheitToCelsius();
     }
 }
