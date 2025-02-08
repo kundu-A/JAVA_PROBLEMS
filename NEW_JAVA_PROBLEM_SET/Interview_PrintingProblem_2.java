@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Interview_PrintingProblem_2 {
     public static void solution(String input){
@@ -10,8 +11,14 @@ public class Interview_PrintingProblem_2 {
             if(input.charAt(i)>=97 && input.charAt(i)<=122)
                 lowercase=lowercase+input.charAt(i);
         }
-        System.out.println(uppercase);
-        System.out.println(lowercase);
+        System.out.println(uppercase.chars()
+        .sorted()
+        .mapToObj(c -> String.valueOf((char) c))
+        .collect(Collectors.joining()));
+        System.out.println(lowercase.chars()
+        .sorted()
+        .mapToObj(c -> String.valueOf((char) c))
+        .collect(Collectors.joining()));
     }
     public static void main(String[] args) {
         System.out.println("Input : aBACbcEDed");
