@@ -106,6 +106,14 @@ public class PracticeNumberPatternProblem {
         NumberPattern.pattern25(n);
         System.out.println("**********************************************************");
 
+        System.out.println("Pattern 26: ");
+        NumberPattern.pattern26(n);
+        System.out.println("**********************************************************");
+
+        System.out.println("Pattern 27: ");
+        NumberPattern.pattern27(n);
+        System.out.println("**********************************************************");
+
         sc.close();
     }
 }
@@ -336,6 +344,43 @@ class NumberPattern{
                 System.out.print(" ");
             for(int k=i;k<=n;k++)
                 System.out.print(k+" ");
+            System.out.println();
+        }
+    }
+    public static void pattern26(int n){
+        for(int i=n;i>=1;i--){
+            int num=n-1,k=n-i+1,temp=0;
+            for(int j=k;j>=1;j--){
+                k=k+temp;
+                System.out.print(k+" ");
+                temp=num--;
+            }
+            System.out.println();
+        }
+    //     for (int i = 1; i <= n; i++) {
+    //     int num = i;
+    //     int diff = n - 1;
+
+    //     for (int j = 1; j <= i; j++) {
+    //         System.out.print(num + " ");
+    //         num += diff--;
+    //     }
+    //     System.out.println();
+    // }
+    }
+    public static void pattern27(int n){
+        int c=1;
+        for(int i=1;i<=n;i++){
+            if(i%2==0){
+                int c1=c+i-1;
+                for(int j=1;j<=i;j++)
+                    System.out.print(c1-- +" ");
+                c=c+i;
+            }
+            else{
+                for(int j=1;j<=i;j++)
+                    System.out.print(c++ +" ");
+            }
             System.out.println();
         }
     }
